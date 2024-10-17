@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+		 <form action="https://formspree.io/f/xjkvvjnr" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Anda" required>
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini" required></textarea>
+			
+			  <label for="website">Website:</label>
+    <input type="text" id="website" name="website">
+
+
+            <button type="submit" name="submit">Kirim</button>
+        </form>
+		  <script>
+		  
+		  // Script untuk menghapus isi formulir setelah submit
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Mencegah formulir terkirim secara default
+
+    // Script untuk menampilkan nama website (opsional)
+    const websiteInput = document.getElementById('website');
+    if (window.location.hostname !== 'localhost') {
+      websiteInput.value = window.location.hostname;
+    }
+  </script>
+    </div>
+</body>
+</html>
